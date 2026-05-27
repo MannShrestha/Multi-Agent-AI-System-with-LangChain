@@ -21,13 +21,13 @@ def web_search(query : str) -> str:
 
     results = tavily.search(query=query, max_results=5)
 
-    print(results)
+    # print(results)
 
-    # out = []
+    out = []
 
-    # for r in results['results']:
-    #     out.append(
-    #         f"Title: {r['title']}\nURL: {r['url']}\nSnippet: {r['content'][:300]}\n"
-    #     )
+    for r in results['results']:
+        out.append(
+            f"Title: {r['title']}\nURL: {r['url']}\nSnippet: {r['content'][:300]}\n"
+        )
 
-    #     return "\n-----\n".join(out)
+        return "\n-----\n".join(out)
